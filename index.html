@@ -30,6 +30,32 @@
   const itemsList = document.querySelector('.plates');
   const items = [];
 
+  function addItem(e) {
+      //console.log('Hello');
+      e.preventDefult();
+      const text = (this.querySelector('[name=item]').value); //narrows down the form of user input
+      const item = {
+          text, 
+          done: false
+      };
+      //console.log(item);
+      items.push(item);
+      populateList(items, itemsList);
+      this.reset();
+  }
+
+  function populateList(plates = [], platesList) {
+    platesList.innerHTML = plates.map((place, i) => {
+      return `
+        <li>
+          <label for=""">${plate.text}</label>  
+        </li>
+      `;
+    });.join('');
+  }
+
+  addItems.addEventListener('submit', addItem);
+
 </script>
 
 
