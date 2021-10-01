@@ -62,7 +62,7 @@
     if(!e.target.matches('input')) return; //skip this unless target matches the user input
     const el = target;
     const index = el.dataset.index;
-    items[index].done = !items[index].done; //change done property from false to true - which is representing if a box is checked
+    items[index].done = !items[index].done; //changed done property from false to true - which is representing if a box is checked
     localStorage.setItem('items', JSON.stringify(items));
     populateList(items, itemsList); //visually updates list
   }
